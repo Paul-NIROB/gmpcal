@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retail Quota Live Tracker - IPO Insider</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo"><i data-lucide="trending-up" style="margin-right: 8px;"></i>IPO Insider</div>
+        <ul class="nav-links">
+            <li><a href="index.html"><i data-lucide="home" style="width: 16px; margin-right: 4px;"></i>Home</a></li>
+            <li><a href="gmp.html"><i data-lucide="dollar-sign" style="width: 16px; margin-right: 4px;"></i>GMP</a></li>
+            <li><a href="subscription.html"><i data-lucide="users" style="width: 16px; margin-right: 4px;"></i>Subscription</a></li>
+            <li><a href="retail-tracker.html" class="active"><i data-lucide="activity" style="width: 16px; margin-right: 4px;"></i>Retail Tracker</a></li>
+            <li><a href="allotment.html"><i data-lucide="check-circle" style="width: 16px; margin-right: 4px;"></i>Allotment</a></li>
+        </ul>
+    </nav>
+
+    <div class="hero mini-hero">
+        <div class="container">
+            <h1><i data-lucide="activity" style="margin-right: 12px; vertical-align: middle;"></i>Retail Quota Live Tracker</h1>
+            <p>Real-time subscription tracking and allotment probability analysis for retail investors.</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Live Alert Banner -->
+        <div class="alert-banner info-banner" id="live-update-status">
+            <i data-lucide="refresh-cw" class="spin-animation" style="width: 18px; margin-right: 10px;"></i>
+            <span>Live data syncing... Next update in <span id="update-timer">30</span>s</span>
+        </div>
+
+        <!-- Filter and Sort Controls -->
+        <div class="filter-controls glass-card" style="margin-bottom: 30px;">
+            <div class="search-container" style="max-width: 400px; margin-bottom: 0;">
+                <input type="text" id="tracker-search" placeholder="Filter by IPO name...">
+            </div>
+            <div class="sort-options">
+                <label>Sort By:</label>
+                <select id="tracker-sort">
+                    <option value="name">Name</option>
+                    <option value="multiplier-desc">Subscription (High to Low)</option>
+                    <option value="multiplier-asc">Subscription (Low to High)</option>
+                    <option value="probability">Allotment Probability</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Retail Subscription Cards Summary -->
+        <div class="retail-summary-grid" id="retail-cards-container">
+            <!-- Dynamic Cards Loaded Here -->
+        </div>
+
+        <!-- Detailed Retail Quota Table -->
+        <section id="retail-tracker-table">
+            <div class="section-header">
+                <h2>Detailed Subscription Analysis</h2>
+                <div class="live-indicator"><span class="pulse"></span> LIVE</div>
+            </div>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>IPO Name</th>
+                            <th>Shares Reserved</th>
+                            <th>Shares Applied</th>
+                            <th>Subscription (x)</th>
+                            <th>Allotment Probability</th>
+                            <th>Progress</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="retail-tracker-body">
+                        <!-- Content loaded by main.js -->
+                    </tbody>
+                </table>
+            </div>
+            <div class="pagination-container">
+                <ul class="pagination" id="tracker-pagination"></ul>
+            </div>
+        </section>
+
+        <!-- Legend and Info -->
+        <div class="glass-card info-section" style="margin-top: 40px;">
+            <h3>Understanding the Tracker</h3>
+            <div class="legend-grid">
+                <div class="legend-item">
+                    <span class="status-badge status-open" style="width: 12px; height: 12px; display: inline-block; border-radius: 50%;"></span>
+                    <span><strong>High Probability:</strong> Subscription < 1x. High chance of full allotment.</span>
+                </div>
+                <div class="legend-item">
+                    <span class="status-badge status-upcoming" style="width: 12px; height: 12px; display: inline-block; border-radius: 50%;"></span>
+                    <span><strong>Moderate:</strong> Subscription 1x - 5x. Lottery-based allotment likely.</span>
+                </div>
+                <div class="legend-item">
+                    <span class="status-badge status-closed" style="width: 12px; height: 12px; display: inline-block; border-radius: 50%;"></span>
+                    <span><strong>Low Probability:</strong> Subscription > 10x. Highly competitive lottery.</span>
+                </div>
+            </div>
+            <p style="margin-top: 15px; font-size: 0.9rem; opacity: 0.8;">Note: Data is simulated for demonstration purposes. Live updates occur every 30 seconds during market hours.</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 IPO Insider. All Rights Reserved. | Financial Market Data & Analysis</p>
+    </footer>
+
+    <script src="js/data.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

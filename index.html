@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPO Insider - Latest IPOs and Stock Market News</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo"><i data-lucide="trending-up" style="margin-right: 8px;"></i>IPO Insider</div>
+        <ul class="nav-links">
+            <li><a href="index.html"><i data-lucide="home" style="width: 16px; margin-right: 4px;"></i>Home</a></li>
+            <li><a href="index.html#current-ipos"><i data-lucide="zap" style="width: 16px; margin-right: 4px;"></i>Current IPO</a></li>
+            <li><a href="index.html#upcoming-ipos"><i data-lucide="calendar" style="width: 16px; margin-right: 4px;"></i>Upcoming</a></li>
+            <li><a href="gmp.html"><i data-lucide="dollar-sign" style="width: 16px; margin-right: 4px;"></i>GMP</a></li>
+            <li><a href="subscription.html"><i data-lucide="users" style="width: 16px; margin-right: 4px;"></i>Subscription</a></li>
+            <li><a href="retail-tracker.html"><i data-lucide="activity" style="width: 16px; margin-right: 4px;"></i>Retail Tracker</a></li>
+            <li><a href="allotment.html"><i data-lucide="check-circle" style="width: 16px; margin-right: 4px;"></i>Allotment</a></li>
+        </ul>
+    </nav>
+
+    <div class="hero">
+        <div class="container">
+            <h1>Stay Ahead in the Stock Market</h1>
+            <p>Your one-stop destination for IPO analysis, GMP, and real-time subscription status.</p>
+            <div class="search-wrapper">
+                <form class="search-container" id="search-form">
+                    <div class="search-input-wrapper">
+                        <i data-lucide="search"></i>
+                        <input type="text" id="search-input" placeholder="Search IPOs by name..." autocomplete="off">
+                    </div>
+                    <button type="submit">Search</button>
+                </form>
+                <div id="search-suggestions" class="autocomplete-dropdown">
+                    <div class="loading-indicator" id="search-loading">
+                        <i data-lucide="refresh-cw" class="spin-animation" style="width: 16px; margin-right: 8px;"></i>
+                        Searching...
+                    </div>
+                    <div id="suggestions-list"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Current IPOs Section -->
+        <section id="current-ipos">
+            <h2>Current & Recent IPOs</h2>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>IPO Name</th>
+                            <th>Price Band</th>
+                            <th>Open Date</th>
+                            <th>Close Date</th>
+                            <th>Issue Size</th>
+                            <th>GMP</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="current-ipo-body">
+                        <!-- Content loaded by main.js -->
+                    </tbody>
+                </table>
+            </div>
+            <ul class="pagination"></ul>
+        </section>
+
+        <div class="card-grid">
+            <!-- Upcoming IPOs Section -->
+            <section id="upcoming-ipos" style="grid-column: span 1;">
+                <h2>Upcoming IPOs</h2>
+                <div id="upcoming-ipo-list">
+                    <!-- Content loaded by main.js -->
+                </div>
+            </section>
+
+            <!-- Recently Listed Section -->
+            <section id="recently-listed" style="grid-column: span 1;">
+                <h2>Recently Listed IPOs</h2>
+                <div id="recently-listed-list">
+                    <!-- Content loaded by main.js -->
+                </div>
+            </section>
+        </div>
+
+        <!-- Latest News Section -->
+        <section id="news">
+            <h2>Latest Stock Market News</h2>
+            <div id="news-list">
+                <!-- Content loaded by main.js -->
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 IPO Insider. All Rights Reserved. | Financial Market Data & Analysis</p>
+    </footer>
+
+    <script src="js/data.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

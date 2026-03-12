@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPO Calendar | IPO Insider</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 10px;
+            margin-top: 2rem;
+        }
+        .calendar-day {
+            background: var(--bg-card);
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            padding: 1rem;
+            min-height: 120px;
+            transition: all 0.3s ease;
+        }
+        .calendar-day:hover {
+            border-color: var(--primary-neon);
+            transform: scale(1.02);
+        }
+        .day-number {
+            font-weight: 800;
+            color: var(--text-dim);
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+        .event-item {
+            font-size: 0.7rem;
+            padding: 4px 8px;
+            border-radius: 4px;
+            margin-bottom: 4px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+        .event-open { background: rgba(0, 255, 136, 0.15); color: var(--success-neon); border: 1px solid var(--success-neon); }
+        .event-close { background: rgba(255, 0, 85, 0.15); color: var(--danger-neon); border: 1px solid var(--danger-neon); }
+        .event-listing { background: rgba(0, 242, 255, 0.15); color: var(--primary-neon); border: 1px solid var(--primary-neon); }
+        .calendar-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+        .day-name {
+            text-align: center;
+            font-weight: 800;
+            color: var(--primary-neon);
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar" id="navbar-container"></nav>
+
+    <div class="container">
+        <section>
+            <div class="calendar-header">
+                <h1><i data-lucide="calendar" style="margin-right: 8px;"></i>IPO Calendar</h1>
+                <div style="display: flex; gap: 1rem; align-items: center;">
+                    <button class="watchlist-btn"><i data-lucide="chevron-left"></i></button>
+                    <h3 id="current-month">March 2026</h3>
+                    <button class="watchlist-btn"><i data-lucide="chevron-right"></i></button>
+                </div>
+            </div>
+
+            <div class="calendar-grid">
+                <div class="day-name">Sun</div>
+                <div class="day-name">Mon</div>
+                <div class="day-name">Tue</div>
+                <div class="day-name">Wed</div>
+                <div class="day-name">Thu</div>
+                <div class="day-name">Fri</div>
+                <div class="day-name">Sat</div>
+                <!-- Calendar days will be generated via JS -->
+            </div>
+            <div id="calendar-days" class="calendar-grid" style="margin-top: 0;"></div>
+        </section>
+
+        <div class="card-grid" style="grid-template-columns: repeat(3, 1fr);">
+            <div class="info-box"><span class="event-item event-open">●</span> IPO Opening</div>
+            <div class="info-box"><span class="event-item event-close">●</span> IPO Closing</div>
+            <div class="info-box"><span class="event-item event-listing">●</span> Listing Date</div>
+        </div>
+    </div>
+
+    <script src="js/data.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            renderCalendar();
+            // Re-use common navbar
+            const nav = document.getElementById('navbar-container');
+            nav.innerHTML = `
+                <div class="logo"><i data-lucide="trending-up" style="margin-right: 8px;"></i>IPO Insider</div>
+                <ul class="nav-links">
+                    <li><a href="index.html"><i data-lucide="home" style="width: 16px; margin-right: 4px;"></i>Home</a></li>
+                    <li><a href="calendar.html" class="active"><i data-lucide="calendar" style="width: 16px; margin-right: 4px;"></i>Calendar</a></li>
+                    <li><a href="gmp.html"><i data-lucide="dollar-sign" style="width: 16px; margin-right: 4px;"></i>GMP</a></li>
+                    <li><a href="subscription.html"><i data-lucide="users" style="width: 16px; margin-right: 4px;"></i>Subscription</a></li>
+                    <li><a href="allotment.html"><i data-lucide="check-circle" style="width: 16px; margin-right: 4px;"></i>Allotment</a></li>
+                </ul>
+            `;
+            lucide.createIcons();
+        });
+
+        function renderCalendar() {
+            const container = document.getElementById('calendar-days');
+            container.innerHTML = '';
+            
+            // Generate March 2026 (Starting Sunday March 1)
+            for (let i = 1; i <= 31; i++) {
+                const dateStr = `2026-03-${i.toString().padStart(2, '0')}`;
+                const events = [];
+                
+                ipoData.forEach(ipo => {
+                    if (ipo.openDate === dateStr) events.push({name: ipo.name, type: 'open', id: ipo.id});
+                    if (ipo.closeDate === dateStr) events.push({name: ipo.name, type: 'close', id: ipo.id});
+                    if (ipo.listingDate === dateStr) events.push({name: ipo.name, type: 'listing', id: ipo.id});
+                });
+
+                const dayEl = document.createElement('div');
+                dayEl.className = 'calendar-day';
+                dayEl.innerHTML = `
+                    <span class="day-number">${i}</span>
+                    <div class="events-list">
+                        ${events.map(e => `
+                            <div class="event-item event-${e.type}" onclick="location.href='details.html?id=${e.id}'">
+                                ${e.name}
+                            </div>
+                        `).join('')}
+                    </div>
+                `;
+                container.appendChild(dayEl);
+            }
+        }
+    </script>
+</body>
+</html>

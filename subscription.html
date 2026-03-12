@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPO Subscription Status | IPO Insider</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo"><i data-lucide="trending-up" style="margin-right: 8px;"></i>IPO Insider</div>
+        <ul class="nav-links">
+            <li><a href="index.html"><i data-lucide="home" style="width: 16px; margin-right: 4px;"></i>Home</a></li>
+            <li><a href="index.html#current-ipos"><i data-lucide="zap" style="width: 16px; margin-right: 4px;"></i>Current IPO</a></li>
+            <li><a href="index.html#upcoming-ipos"><i data-lucide="calendar" style="width: 16px; margin-right: 4px;"></i>Upcoming</a></li>
+            <li><a href="gmp.html"><i data-lucide="dollar-sign" style="width: 16px; margin-right: 4px;"></i>GMP</a></li>
+            <li><a href="subscription.html" class="active"><i data-lucide="users" style="width: 16px; margin-right: 4px;"></i>Subscription</a></li>
+            <li><a href="retail-tracker.html"><i data-lucide="activity" style="width: 16px; margin-right: 4px;"></i>Retail Tracker</a></li>
+            <li><a href="allotment.html"><i data-lucide="check-circle" style="width: 16px; margin-right: 4px;"></i>Allotment</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <section>
+            <h1>IPO Subscription Numbers</h1>
+            <p>Real-time subscription data for current IPOs across QIB, NII, and Retail categories.</p>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>IPO Name</th>
+                            <th>QIB (x)</th>
+                            <th>NII (x)</th>
+                            <th>Retail (x)</th>
+                            <th>Total Subscription (x)</th>
+                        </tr>
+                    </thead>
+                    <tbody id="subscription-table-body">
+                        <!-- Content loaded by main.js -->
+                    </tbody>
+                </table>
+            </div>
+            <ul class="pagination"></ul>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 IPO Insider. All Rights Reserved. | Financial Market Data & Analysis</p>
+    </footer>
+
+    <script src="js/data.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

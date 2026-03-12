@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPO Details | IPO Insider</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo"><i data-lucide="trending-up" style="margin-right: 8px;"></i>IPO Insider</div>
+        <ul class="nav-links">
+            <li><a href="index.html"><i data-lucide="home" style="width: 16px; margin-right: 4px;"></i>Home</a></li>
+            <li><a href="index.html#current-ipos"><i data-lucide="zap" style="width: 16px; margin-right: 4px;"></i>Current IPO</a></li>
+            <li><a href="index.html#upcoming-ipos"><i data-lucide="calendar" style="width: 16px; margin-right: 4px;"></i>Upcoming</a></li>
+            <li><a href="gmp.html"><i data-lucide="dollar-sign" style="width: 16px; margin-right: 4px;"></i>GMP</a></li>
+            <li><a href="subscription.html"><i data-lucide="users" style="width: 16px; margin-right: 4px;"></i>Subscription</a></li>
+            <li><a href="retail-tracker.html"><i data-lucide="activity" style="width: 16px; margin-right: 4px;"></i>Retail Tracker</a></li>
+            <li><a href="allotment.html"><i data-lucide="check-circle" style="width: 16px; margin-right: 4px;"></i>Allotment</a></li>
+        </ul>
+    </nav>
+
+    <div class="container" id="ipo-details-container">
+        <div class="details-header">
+            <div>
+                <h1 id="ipo-name-title">Loading...</h1>
+                <span id="ipo-status-badge" class="status-badge"></span>
+            </div>
+            <a href="index.html" class="back-link">&larr; Back to List</a>
+        </div>
+
+        <div class="details-grid">
+            <div class="main-details">
+                <section>
+                    <h2>IPO Overview</h2>
+                    <p id="ipo-overview"></p>
+                </section>
+
+                <section>
+                    <h2>About the Company</h2>
+                    <div id="ipo-company-info"></div>
+                </section>
+
+                <section>
+                    <h2>Objectives of the Issue</h2>
+                    <ul id="ipo-objectives"></ul>
+                </section>
+
+                <section>
+                    <h2>Strengths and Risks</h2>
+                    <div class="card-grid">
+                        <div>
+                            <h3>Strengths</h3>
+                            <ul id="ipo-strengths"></ul>
+                        </div>
+                        <div>
+                            <h3>Risks</h3>
+                            <ul id="ipo-risks"></ul>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <aside class="side-details">
+                <section class="info-box">
+                    <h4>Important Details</h4>
+                    <p><strong>Price Band:</strong> <span id="ipo-price-band"></span></p>
+                    <p><strong>Lot Size:</strong> <span id="ipo-lot-size"></span> Shares</p>
+                    <p><strong>Issue Size:</strong> <span id="ipo-issue-size"></span></p>
+                    <p><strong>GMP:</strong> <span id="ipo-gmp"></span></p>
+                </section>
+
+                <section class="info-box">
+                    <h4>Important Dates</h4>
+                    <div id="ipo-dates"></div>
+                </section>
+
+                <section class="info-box">
+                    <h4>Subscription Status</h4>
+                    <div id="ipo-subscription-status"></div>
+                    <canvas id="subscriptionChart" width="400" height="400" style="margin-top: 1rem;"></canvas>
+                </section>
+            </aside>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 IPO Insider. All Rights Reserved. | Financial Market Data & Analysis</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

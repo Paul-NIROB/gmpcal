@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | IPO Insider</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="admin-page">
+    <nav class="navbar">
+        <div class="logo"><i data-lucide="shield" style="margin-right: 8px;"></i>Admin Panel</div>
+        <ul class="nav-links">
+            <li><a href="index.html">View Site</a></li>
+            <li><a href="#" class="active">Manage IPOs</a></li>
+            <li><a href="#">News</a></li>
+            <li><a href="#">Settings</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <section>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+                <h1>Manage IPO Data</h1>
+                <button class="search-container button" style="border-radius: 8px;">+ Add New IPO</button>
+            </div>
+
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>IPO Name</th>
+                            <th>Status</th>
+                            <th>GMP (Current)</th>
+                            <th>Last Updated</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="admin-ipo-list">
+                        <!-- Content will be loaded via JS -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="admin-form-section" style="display: none;">
+            <h2 id="form-title">Edit IPO</h2>
+            <form id="ipo-edit-form" class="calculator-grid" style="grid-template-columns: 1fr 1fr 1fr;">
+                <div class="calc-input-group">
+                    <label>IPO Name</label>
+                    <input type="text" id="edit-name" style="width: 100%;">
+                </div>
+                <div class="calc-input-group">
+                    <label>Status</label>
+                    <select id="edit-status" style="width: 100%;">
+                        <option value="Open">Open</option>
+                        <option value="Upcoming">Upcoming</option>
+                        <option value="Closed">Closed</option>
+                        <option value="Listed">Listed</option>
+                    </select>
+                </div>
+                <div class="calc-input-group">
+                    <label>GMP Value</label>
+                    <input type="text" id="edit-gmp" style="width: 100%;">
+                </div>
+                <div style="grid-column: span 3; text-align: right;">
+                    <button type="button" class="watchlist-btn" onclick="hideAdminForm()">Cancel</button>
+                    <button type="submit" class="search-container button" style="border-radius: 8px;">Save Changes</button>
+                </div>
+            </form>
+        </section>
+    </div>
+
+    <script src="js/data.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            lucide.createIcons();
+            renderAdminList();
+        });
+
+        function renderAdminList() {
+            const list = document.getElementById('admin-ipo-list');
+            list.innerHTML = ipoData.map(ipo => `
+                <tr>
+                    <td><strong>${ipo.name}</strong></td>
+                    <td><span class="status-badge">${ipo.status}</span></td>
+                    <td>${ipo.gmp}</td>
+                    <td>${ipo.lastUpdated}</td>
+                    <td>
+                        <button class="watchlist-btn" onclick="editIpo(${ipo.id})"><i data-lucide="edit-2" style="width: 14px;"></i></button>
+                        <button class="watchlist-btn" style="color: var(--danger-neon);"><i data-lucide="trash-2" style="width: 14px;"></i></button>
+                    </td>
+                </tr>
+            `).join('');
+            lucide.createIcons();
+        }
+
+        function editIpo(id) {
+            const ipo = ipoData.find(i => i.id === id);
+            document.getElementById('admin-form-section').style.display = 'block';
+            document.getElementById('edit-name').value = ipo.name;
+            document.getElementById('edit-status').value = ipo.status;
+            document.getElementById('edit-gmp').value = ipo.gmp;
+            window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+        }
+
+        function hideAdminForm() {
+            document.getElementById('admin-form-section').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
