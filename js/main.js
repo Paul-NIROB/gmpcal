@@ -29,7 +29,53 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Dynamic Content Loading (Home, GMP, Subscription, etc.)
     loadDynamicContent();
+    // Mobile Search Logic
+    initMobileSearch();
 });
+
+function initMobileSearch() {
+    const trigger = document.getElementById('mobile-search-trigger');
+    const floatBtn = document.getElementById('floating-search');
+    const overlay = document.getElementById('search-overlay');
+    const closeBtn = document.getElementById('close-search');
+    const input = document.getElementById('overlay-search-input');
+    const suggestions = document.getElementById('overlay-suggestions');
+
+    const openSearch = (e) => {
+        if(e) e.preventDefault();
+        overlay.classList.add('active');
+        input.focus();
+    };
+
+    const closeSearch = () => {
+        overlay.classList.remove('active');
+    };
+
+    if (trigger) trigger.onclick = openSearch;
+    if (floatBtn) floatBtn.onclick = openSearch;
+    if (closeBtn) closeBtn.onclick = closeSearch;
+
+    if (input) {
+        input.addEventListener('input', (e) => {
+            const query = e.target.value.toLowerCase();
+            if (!query) {
+                suggestions.innerHTML = '';
+                return;
+            }
+            const matches = ipoData.filter(ipo => ipo.name.toLowerCase().includes(query)).slice(0, 5);
+            suggestions.innerHTML = matches.map(ipo => `
+                <div class="suggestion-item" onclick="window.location.href='details.html?id=${ipo.id}'">
+                    <div class="ipo-info">
+                        <span class="ipo-name">${ipo.name}</span>
+                        <span class="ipo-status">${ipo.status}</span>
+                    </div>
+                    <i data-lucide="chevron-right"></i>
+                </div>
+            `).join('');
+            lucide.createIcons();
+        });
+    }
+}
 
 function initAutocompleteSearch() {
     const searchForm = document.getElementById('search-form');
@@ -477,38 +523,30 @@ function getStatusClass(status) {
 // RENDER: Home Page
 function renderHomePage() {
     const tableBody = document.getElementById('current-ipo-body');
-    if (!tableBody) return;
+    const mobileContainer = document.getElementById('current-ipo-mobile');
+    if (!tableBody && !mobileContainer) return;
 
-    // Add Search and Filter UI dynamically if not present
-    if (!document.getElementById('table-controls')) {
-        const controls = document.createElement('div');
-        controls.id = 'table-controls';
-        controls.style.cssText = 'display: flex; gap: 1rem; margin-bottom: 1rem; align-items: center;';
-        controls.innerHTML = `
-            <div class="search-container" style="max-width: 300px; margin: 0; padding: 4px;">
-                <input type="text" id="table-search" placeholder="Filter by name..." style="padding: 0.5rem;">
-            </div>
-            <select id="status-filter" class="watchlist-btn" style="padding: 8px 16px; border-radius: 8px;">
-                <option value="all">All Status</option>
-                <option value="Open">Open</option>
-                <option value="Closed">Closed</option>
-            </select>
-        `;
-        tableBody.parentElement.parentElement.insertBefore(controls, tableBody.parentElement);
-        
-        document.getElementById('table-search').oninput = (e) => filterHomeTable(e.target.value, document.getElementById('status-filter').value);
-        document.getElementById('status-filter').onchange = (e) => filterHomeTable(document.getElementById('table-search').value, e.target.value);
+    const currentIpos = ipoData.filter(ipo => ipo.status === 'Open' || ipo.status === 'Closed');
+
+    // Desktop Table
+    if (tableBody) {
+        updateHomeTable(currentIpos);
     }
 
-    updateHomeTable(ipoData.filter(ipo => ipo.status === 'Open' || ipo.status === 'Closed'));
+    // Mobile Cards
+    if (mobileContainer) {
+        renderMobileCards(currentIpos, mobileContainer);
+    }
     
     // Add Alert System
     showIPOAlerts();
     
-    // Upcoming IPOs Section
+    // Upcoming IPOs
     const upcomingContainer = document.getElementById('upcoming-ipo-list');
+    const upcomingMobile = document.getElementById('upcoming-ipo-mobile');
+    const upcomingIpos = ipoData.filter(ipo => ipo.status === 'Upcoming');
+
     if (upcomingContainer) {
-        const upcomingIpos = ipoData.filter(ipo => ipo.status === 'Upcoming');
         upcomingContainer.innerHTML = upcomingIpos.map(ipo => `
             <div class="card">
                 <h3><a href="details.html?id=${ipo.id}">${ipo.name}</a></h3>
@@ -518,11 +556,16 @@ function renderHomePage() {
             </div>
         `).join('');
     }
+    if (upcomingMobile) {
+        renderMobileCards(upcomingIpos, upcomingMobile);
+    }
 
     // Recently Listed
     const listedContainer = document.getElementById('recently-listed-list');
+    const listedMobile = document.getElementById('recently-listed-mobile');
+    const listedIpos = ipoData.filter(ipo => ipo.status === 'Listed');
+
     if (listedContainer) {
-        const listedIpos = ipoData.filter(ipo => ipo.status === 'Listed');
         listedContainer.innerHTML = listedIpos.map(ipo => `
             <div class="card">
                 <h3><a href="details.html?id=${ipo.id}">${ipo.name}</a></h3>
@@ -530,6 +573,9 @@ function renderHomePage() {
                 <p><strong>Price:</strong> ${ipo.priceBand}</p>
             </div>
         `).join('');
+    }
+    if (listedMobile) {
+        renderMobileCards(listedIpos, listedMobile);
     }
 
     // News
@@ -543,6 +589,42 @@ function renderHomePage() {
             </div>
         `).join('');
     }
+}
+
+function renderMobileCards(ipos, container) {
+    container.innerHTML = ipos.map(ipo => `
+        <div class="ipo-mobile-card" onclick="window.location.href='details.html?id=${ipo.id}'">
+            <div class="card-top">
+                <div>
+                    <h3>${ipo.name}</h3>
+                    <span class="status-badge ${getStatusClass(ipo.status)}">${ipo.status}</span>
+                </div>
+                <div class="stat-value" style="color: var(--primary-neon);">${ipo.gmp}</div>
+            </div>
+            <div class="card-stats">
+                <div class="stat-item">
+                    <span class="stat-label">Price Band</span>
+                    <span class="stat-value">${ipo.priceBand}</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Close Date</span>
+                    <span class="stat-value">${ipo.closeDate}</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Subscription</span>
+                    <span class="stat-value">${ipo.subscription.total}</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Rating</span>
+                    <span class="stat-value">${ipo.ratings.fundamental} ★</span>
+                </div>
+            </div>
+            <div class="card-footer">
+                <button class="watchlist-btn" style="padding: 6px 12px; font-size: 0.8rem;">Details</button>
+                <div style="font-size: 0.7rem; color: var(--text-dim);">Tap to view</div>
+            </div>
+        </div>
+    `).join('');
 }
 
 // RENDER: GMP Page

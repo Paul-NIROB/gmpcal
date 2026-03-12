@@ -69,6 +69,10 @@
                     </tbody>
                 </table>
             </div>
+            <!-- Mobile Cards Container -->
+            <div class="mobile-card-container swipe-container" id="current-ipo-mobile">
+                <!-- Mobile cards loaded by main.js -->
+            </div>
             <ul class="pagination"></ul>
         </section>
 
@@ -79,6 +83,10 @@
                 <div id="upcoming-ipo-list">
                     <!-- Content loaded by main.js -->
                 </div>
+                <!-- Mobile Cards Container -->
+                <div class="mobile-card-container swipe-container" id="upcoming-ipo-mobile">
+                    <!-- Mobile cards loaded by main.js -->
+                </div>
             </section>
 
             <!-- Recently Listed Section -->
@@ -86,6 +94,10 @@
                 <h2>Recently Listed IPOs</h2>
                 <div id="recently-listed-list">
                     <!-- Content loaded by main.js -->
+                </div>
+                <!-- Mobile Cards Container -->
+                <div class="mobile-card-container swipe-container" id="recently-listed-mobile">
+                    <!-- Mobile cards loaded by main.js -->
                 </div>
             </section>
         </div>
@@ -102,6 +114,46 @@
     <footer>
         <p>&copy; 2026 IPO Insider. All Rights Reserved. | Financial Market Data & Analysis</p>
     </footer>
+
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav">
+        <a href="index.html" class="bottom-nav-item active">
+            <i data-lucide="home"></i>
+            <span>Home</span>
+        </a>
+        <a href="index.html#current-ipos" class="bottom-nav-item">
+            <i data-lucide="zap"></i>
+            <span>IPO</span>
+        </a>
+        <a href="gmp.html" class="bottom-nav-item">
+            <i data-lucide="dollar-sign"></i>
+            <span>GMP</span>
+        </a>
+        <a href="subscription.html" class="bottom-nav-item">
+            <i data-lucide="users"></i>
+            <span>Subscription</span>
+        </a>
+        <a href="#" class="bottom-nav-item" id="mobile-search-trigger">
+            <i data-lucide="search"></i>
+            <span>Search</span>
+        </a>
+    </nav>
+
+    <!-- Floating Search Button -->
+    <button class="floating-search-btn" id="floating-search">
+        <i data-lucide="search"></i>
+    </button>
+
+    <!-- Search Overlay -->
+    <div class="search-overlay" id="search-overlay">
+        <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem;">
+            <button id="close-search" style="background: none; border: none; color: var(--white);"><i data-lucide="arrow-left"></i></button>
+            <div class="search-input-wrapper" style="background: rgba(255, 255, 255, 0.05); border: 1px solid var(--glass-border); border-radius: 12px; flex-grow: 1;">
+                <input type="text" id="overlay-search-input" placeholder="Search IPOs..." style="width: 100%; padding: 1rem; background: transparent; border: none; color: var(--white); outline: none;">
+            </div>
+        </div>
+        <div id="overlay-suggestions" class="mobile-suggestions"></div>
+    </div>
 
     <script src="js/data.js"></script>
     <script src="js/main.js"></script>

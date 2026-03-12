@@ -986,131 +986,211 @@ input[type="text"]:focus, input[type="number"]:focus, select:focus {
     font-size: 0.85rem;
 }
 
-/* Responsive & Mobile Specific */
-@media (max-width: 992px) {
-    .details-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .hero h1 {
-        font-size: 2.8rem;
-    }
+/* Bottom Navigation for Mobile */
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(10, 14, 23, 0.9);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0.8rem 0;
+    border-top: 1px solid var(--glass-border);
+    z-index: 2000;
+    display: none; /* Hidden on desktop */
 }
 
+.bottom-nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--text-dim);
+    text-decoration: none;
+    font-size: 0.7rem;
+    gap: 4px;
+    transition: color 0.3s ease;
+}
+
+.bottom-nav-item i {
+    width: 20px;
+    height: 20px;
+}
+
+.bottom-nav-item.active {
+    color: var(--primary-neon);
+}
+
+/* Mobile IPO Cards */
+.mobile-card-container {
+    display: none; /* Hidden on desktop */
+}
+
+.ipo-mobile-card {
+    background: var(--bg-card);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    padding: 1.2rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease;
+}
+
+.ipo-mobile-card:active {
+    transform: scale(0.98);
+}
+
+.card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+}
+
+.card-top h3 {
+    font-size: 1.1rem;
+    margin: 0;
+    color: var(--white);
+}
+
+.card-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-label {
+    font-size: 0.7rem;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.stat-value {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--white);
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.collapsible-details {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.collapsible-details.open {
+    max-height: 500px;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px dashed var(--glass-border);
+}
+
+/* Swipeable Sections */
+.swipe-container {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 1rem;
+    padding: 1rem 0;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.swipe-container::-webkit-scrollbar {
+    display: none;
+}
+
+.swipe-item {
+    flex: 0 0 85%;
+    scroll-snap-align: center;
+}
+
+/* Floating Search Button */
+.floating-search-btn {
+    position: fixed;
+    right: 20px;
+    bottom: 90px;
+    width: 56px;
+    height: 56px;
+    background: var(--primary-neon);
+    color: var(--bg-dark);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 30px rgba(0, 242, 255, 0.4);
+    z-index: 1500;
+    border: none;
+    cursor: pointer;
+    display: none;
+}
+
+/* Full Screen Search Panel */
+.search-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--bg-dark);
+    z-index: 3000;
+    padding: 1.5rem;
+    display: none;
+    flex-direction: column;
+    animation: slideUpFade 0.3s ease;
+}
+
+@keyframes slideUpFade {
+    from { transform: translateY(100%); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.search-overlay.active {
+    display: flex;
+}
+
+/* Responsive & Mobile First Overrides */
 @media (max-width: 768px) {
     .navbar {
-        padding: 1rem;
+        display: none; /* Hide top nav on mobile */
     }
 
-    .hamburger {
+    .bottom-nav {
+        display: flex;
+    }
+
+    .floating-search-btn {
+        display: flex;
+    }
+
+    .table-responsive {
+        display: none; /* Hide tables in favor of cards */
+    }
+
+    .mobile-card-container {
         display: block;
     }
 
-    .nav-links {
-        position: fixed;
-        top: 0;
-        right: 0;
-        height: 100vh;
-        width: 280px;
-        background: rgba(10, 14, 23, 0.95);
-        backdrop-filter: blur(20px);
-        flex-direction: column;
-        padding: 80px 2rem;
-        transform: translateX(100%);
-        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
-        z-index: 1000;
-    }
-
-    .nav-links.active {
-        transform: translateX(0);
-    }
-
-    .nav-links li {
-        margin: 0 0 1.5rem 0;
-    }
-
-    .nav-links a {
-        font-size: 1.1rem;
-        width: 100%;
-    }
-
-    .hero {
-        padding: 3.5rem 1rem;
-    }
-
-    .hero h1 {
-        font-size: 2.2rem;
-    }
-
-    .hero p {
-        font-size: 1rem;
-    }
-
-    .search-container {
-        flex-direction: column;
-        background: none;
-        border: none;
-        gap: 1rem;
-    }
-
-    .search-input-wrapper {
-        background: rgba(255, 255, 255, 0.05);
-        border: 1px solid var(--glass-border);
-        border-radius: 12px;
-        width: 100%;
-    }
-
-    .search-container button {
-        width: 100%;
-    }
-
-    .filter-controls {
-        flex-direction: column;
-        align-items: stretch;
-    }
-
-    .sort-options {
-        justify-content: space-between;
-    }
-
-    section {
-        padding: 1.5rem;
-    }
-
-    .details-header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 1.5rem;
-    }
-
-    .calculator-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .timeline-container {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 2rem;
-        padding-left: 2rem;
-    }
-
-    .timeline-container::before {
-        top: 0;
-        bottom: 0;
-        left: 15px;
-        width: 2px;
-        height: 100%;
-    }
-
-    .timeline-step {
-        text-align: left;
-        display: flex;
-        align-items: center;
-        gap: 1.5rem;
-    }
-
-    .step-dot {
-        margin: 0;
+    .container {
+        margin-top: 1rem;
+        padding-bottom: 80px; /* Space for bottom nav */
     }
 }
 
