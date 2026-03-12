@@ -229,6 +229,16 @@ a:hover {
     align-items: center;
 }
 
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--white);
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1001;
+}
+
 .logo {
     font-size: 1.6rem;
     font-weight: 800;
@@ -241,6 +251,7 @@ a:hover {
 .nav-links {
     display: flex;
     list-style: none;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .nav-links li {
@@ -253,9 +264,12 @@ a:hover {
     font-size: 0.95rem;
     text-transform: uppercase;
     letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    min-height: 44px; /* Touch friendly height */
 }
 
-.nav-links a:hover {
+.nav-links a:hover, .nav-links a.active {
     color: var(--primary-neon);
 }
 
@@ -351,6 +365,12 @@ h2::before {
 
 .card, section {
     animation: float 6s ease-in-out infinite;
+}
+
+@media (max-width: 768px) {
+    .card, section {
+        animation: none; /* Disable heavy animations on mobile */
+    }
 }
 
 section:nth-child(even) {
@@ -527,6 +547,7 @@ tr:hover td::after {
     color: var(--white);
     font-size: 1.1rem;
     outline: none;
+    min-height: 44px;
 }
 
 .search-container button {
@@ -540,6 +561,7 @@ tr:hover td::after {
     cursor: pointer;
     transition: all 0.3s ease;
     box-shadow: 0 0 15px rgba(0, 242, 255, 0.4);
+    min-height: 44px;
 }
 
 .search-container button:hover {
@@ -550,6 +572,9 @@ tr:hover td::after {
 /* Tables */
 .table-responsive {
     overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin-bottom: 1rem;
+    border-radius: 12px;
 }
 
 table {
@@ -557,6 +582,7 @@ table {
     border-collapse: separate;
     border-spacing: 0 8px;
     margin-top: 1rem;
+    min-width: 600px; /* Ensure tables don't squish too much */
 }
 
 th {
@@ -599,6 +625,8 @@ tr:hover td {
     font-weight: 800;
     text-transform: uppercase;
     letter-spacing: 0.5px;
+    display: inline-block;
+    white-space: nowrap;
 }
 
 .status-open { 
@@ -722,6 +750,9 @@ footer {
     padding: 0.6rem 1.2rem;
     border-radius: 8px;
     font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
 }
 
 /* Pagination */
@@ -730,10 +761,12 @@ footer {
     justify-content: center;
     margin-top: 2rem;
     list-style: none;
+    flex-wrap: wrap;
+    gap: 8px;
 }
 
 .pagination li {
-    margin: 0 8px;
+    margin: 0;
 }
 
 .pagination a {
@@ -742,6 +775,11 @@ footer {
     border-radius: 8px;
     background: rgba(255, 255, 255, 0.05);
     color: var(--text-main);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 44px;
+    min-height: 44px;
 }
 
 .pagination a.active {
@@ -758,15 +796,19 @@ footer {
 }
 
 /* Form Styles (Allotment) */
-input[type="text"], select {
+input[type="text"], input[type="number"], select {
     background: rgba(255, 255, 255, 0.05) !important;
     border: 1px solid var(--glass-border) !important;
     color: var(--white) !important;
+    min-height: 44px;
+    border-radius: 8px;
+    padding: 0 1rem;
 }
 
-input[type="text"]:focus, select:focus {
+input[type="text"]:focus, input[type="number"]:focus, select:focus {
     border-color: var(--primary-neon) !important;
     box-shadow: 0 0 10px rgba(0, 242, 255, 0.2);
+    outline: none;
 }
 
 /* Retail Tracker Styles */
@@ -944,13 +986,148 @@ input[type="text"]:focus, select:focus {
     font-size: 0.85rem;
 }
 
-/* Responsive */
+/* Responsive & Mobile Specific */
+@media (max-width: 992px) {
+    .details-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .hero h1 {
+        font-size: 2.8rem;
+    }
+}
+
 @media (max-width: 768px) {
+    .navbar {
+        padding: 1rem;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        width: 280px;
+        background: rgba(10, 14, 23, 0.95);
+        backdrop-filter: blur(20px);
+        flex-direction: column;
+        padding: 80px 2rem;
+        transform: translateX(100%);
+        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+        z-index: 1000;
+    }
+
+    .nav-links.active {
+        transform: translateX(0);
+    }
+
+    .nav-links li {
+        margin: 0 0 1.5rem 0;
+    }
+
+    .nav-links a {
+        font-size: 1.1rem;
+        width: 100%;
+    }
+
+    .hero {
+        padding: 3.5rem 1rem;
+    }
+
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .search-container {
+        flex-direction: column;
+        background: none;
+        border: none;
+        gap: 1rem;
+    }
+
+    .search-input-wrapper {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid var(--glass-border);
+        border-radius: 12px;
+        width: 100%;
+    }
+
+    .search-container button {
+        width: 100%;
+    }
+
     .filter-controls {
         flex-direction: column;
         align-items: stretch;
     }
+
     .sort-options {
         justify-content: space-between;
+    }
+
+    section {
+        padding: 1.5rem;
+    }
+
+    .details-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.5rem;
+    }
+
+    .calculator-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .timeline-container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2rem;
+        padding-left: 2rem;
+    }
+
+    .timeline-container::before {
+        top: 0;
+        bottom: 0;
+        left: 15px;
+        width: 2px;
+        height: 100%;
+    }
+
+    .timeline-step {
+        text-align: left;
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+    }
+
+    .step-dot {
+        margin: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+
+    .logo {
+        font-size: 1.3rem;
+    }
+
+    .card {
+        padding: 1.5rem;
+    }
+
+    .retail-summary-grid {
+        grid-template-columns: 1fr;
     }
 }
