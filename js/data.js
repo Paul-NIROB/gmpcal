@@ -6,7 +6,7 @@ const ipoData = [
         openDate: "2026-03-10",
         closeDate: "2026-03-12",
         issueSize: "₹1200 Cr",
-        gmp: "₹45 (17.44%)",
+        gmp: "₹41 (15.89%)",
         status: "Open",
         type: "Mainline",
         listingDate: "2026-03-20",
@@ -18,7 +18,7 @@ const ipoData = [
         strengths: ["Strong market presence", "Innovative product portfolio", "Robust financial growth"],
         risks: ["Intense competition", "Dependency on key clients", "Currency fluctuations"],
         allotmentStatus: "Expected on 2026-03-15",
-        lastUpdated: "2026-03-07 10:00 AM",
+        lastUpdated: "2026-04-09 03:25 PM",
         ratings: { fundamental: 4.5, risk: "Low", growth: 4.8 },
         timeline: [
             { event: "Announcement", date: "2026-02-15", status: "completed" },
@@ -47,7 +47,7 @@ const ipoData = [
         strengths: ["Sustainable business model", "Experienced management team", "Government subsidies"],
         risks: ["Weather dependency", "Regulatory changes", "High initial capital expenditure"],
         allotmentStatus: "To be announced",
-        lastUpdated: "2026-03-07 11:30 AM",
+        lastUpdated: "2026-04-09 03:25 PM",
         ratings: { fundamental: 4.2, risk: "Medium", growth: 4.5 },
         timeline: [
             { event: "Announcement", date: "2026-02-20", status: "completed" },
@@ -76,7 +76,7 @@ const ipoData = [
         strengths: ["Proprietary technology", "High customer retention", "Scalable platform"],
         risks: ["Cybersecurity threats", "Rapid technological changes", "Compliance risks"],
         allotmentStatus: "Allotment Finalized",
-        lastUpdated: "2026-03-07 09:15 AM",
+        lastUpdated: "2026-04-09 03:25 PM",
         ratings: { fundamental: 4.8, risk: "High", growth: 4.9 },
         timeline: [
             { event: "Announcement", date: "2026-02-10", status: "completed" },
@@ -105,7 +105,7 @@ const ipoData = [
         strengths: ["Wide geographical reach", "Reliable diagnostic services", "Efficient operations"],
         risks: ["Healthcare regulations", "Medical professional shortage", "High maintenance costs"],
         allotmentStatus: "Allotment Finalized",
-        lastUpdated: "2026-03-05 05:00 PM",
+        lastUpdated: "2026-04-09 03:25 PM",
         ratings: { fundamental: 4.0, risk: "Low", growth: 4.2 },
         timeline: [
             { event: "Announcement", date: "2026-02-01", status: "completed" },
@@ -134,7 +134,7 @@ const ipoData = [
         strengths: ["Strong order book", "Government incentives"],
         risks: ["Import dependency", "Policy changes"],
         allotmentStatus: "Expected on 2026-03-18",
-        lastUpdated: "2026-03-07 10:00 AM",
+        lastUpdated: "2026-04-09 03:25 PM",
         ratings: { fundamental: 4.3, risk: "Low", growth: 4.6 },
         timeline: [
             { event: "Announcement", date: "2026-02-18", status: "completed" },
@@ -163,7 +163,7 @@ const ipoData = [
         strengths: ["Government contracts", "Experienced leadership"],
         risks: ["Project delays", "High debt"],
         allotmentStatus: "Expected on 2026-03-14",
-        lastUpdated: "2026-03-07 10:00 AM",
+        lastUpdated: "2026-04-09 03:25 PM",
         ratings: { fundamental: 4.1, risk: "Medium", growth: 4.4 },
         timeline: [
             { event: "Announcement", date: "2026-02-12", status: "completed" },
@@ -192,7 +192,7 @@ const ipoData = [
         strengths: ["Export demand", "Organic certification"],
         risks: ["Raw material prices", "Climate risk"],
         allotmentStatus: "Allotment Finalized",
-        lastUpdated: "2026-03-07 10:00 AM",
+        lastUpdated: "2026-04-09 03:25 PM",
         ratings: { fundamental: 3.8, risk: "High", growth: 4.1 },
         timeline: [
             { event: "Announcement", date: "2026-02-05", status: "completed" },
@@ -221,7 +221,7 @@ const ipoData = [
         strengths: ["Strong pipeline", "Patented technology"],
         risks: ["FDA approvals", "High R&D costs"],
         allotmentStatus: "To be announced",
-        lastUpdated: "2026-03-07 10:00 AM",
+        lastUpdated: "2026-04-09 03:25 PM",
         ratings: { fundamental: 4.7, risk: "Medium", growth: 5.0 },
         timeline: [
             { event: "Announcement", date: "2026-02-25", status: "completed" },
@@ -250,7 +250,7 @@ const ipoData = [
         strengths: ["EV market growth", "Key client base"],
         risks: ["Raw material costs", "Tech shift"],
         allotmentStatus: "To be announced",
-        lastUpdated: "2026-03-07 10:00 AM",
+        lastUpdated: "2026-04-09 03:25 PM",
         ratings: { fundamental: 4.2, risk: "Low", growth: 4.5 },
         timeline: [
             { event: "Announcement", date: "2026-03-01", status: "completed" },
@@ -279,7 +279,7 @@ const ipoData = [
         strengths: ["Growing MSME base", "Scalable tech"],
         risks: ["Competition", "Customer acquisition costs"],
         allotmentStatus: "To be announced",
-        lastUpdated: "2026-03-07 10:00 AM",
+        lastUpdated: "2026-04-09 03:25 PM",
         ratings: { fundamental: 3.9, risk: "Medium", growth: 4.3 },
         timeline: [
             { event: "Announcement", date: "2026-03-05", status: "completed" },
@@ -308,7 +308,7 @@ const ipoData = [
         strengths: ["High market share", "Strong brand"],
         risks: ["Regulatory changes", "Cyber threats"],
         allotmentStatus: "To be announced",
-        lastUpdated: "2026-03-07 10:00 AM",
+        lastUpdated: "2026-04-09 03:25 PM",
         ratings: { fundamental: 4.6, risk: "High", growth: 4.8 },
         timeline: [
             { event: "Announcement", date: "2026-03-10", status: "completed" },
@@ -337,7 +337,7 @@ const ipoData = [
         strengths: ["Strong client base", "High growth sector"],
         risks: ["Energy costs", "Tech obsolescence"],
         allotmentStatus: "Allotment Finalized",
-        lastUpdated: "2026-03-07 10:00 AM",
+        lastUpdated: "2026-04-09 03:25 PM",
         ratings: { fundamental: 4.4, risk: "Low", growth: 4.7 },
         timeline: [
             { event: "Announcement", date: "2026-01-20", status: "completed" },
@@ -366,7 +366,7 @@ const ipoData = [
         strengths: ["Large user base", "Proprietary content"],
         risks: ["Content costs", "Regulatory changes"],
         allotmentStatus: "Allotment Finalized",
-        lastUpdated: "2026-03-07 10:00 AM",
+        lastUpdated: "2026-04-09 03:25 PM",
         ratings: { fundamental: 3.7, risk: "High", growth: 4.5 },
         timeline: [
             { event: "Announcement", date: "2026-01-15", status: "completed" },
@@ -395,7 +395,7 @@ const ipoData = [
         strengths: ["Strong network", "Tech-enabled operations"],
         risks: ["Fuel prices", "Operational costs"],
         allotmentStatus: "Allotment Finalized",
-        lastUpdated: "2026-03-07 10:00 AM",
+        lastUpdated: "2026-04-09 03:25 PM",
         ratings: { fundamental: 4.0, risk: "Low", growth: 4.2 },
         timeline: [
             { event: "Announcement", date: "2026-01-10", status: "completed" },
@@ -424,7 +424,7 @@ const ipoData = [
         strengths: ["Innovation", "Distribution network"],
         risks: ["Component costs", "Competition"],
         allotmentStatus: "Allotment Finalized",
-        lastUpdated: "2026-03-07 10:00 AM",
+        lastUpdated: "2026-04-09 03:25 PM",
         ratings: { fundamental: 4.2, risk: "Medium", growth: 4.6 },
         timeline: [
             { event: "Announcement", date: "2026-01-01", status: "completed" },
@@ -437,6 +437,12 @@ const ipoData = [
 ];
 
 const newsData = [
+    {
+        id: 1775728550,
+        title: "Live Market Update: April 09, 2026",
+        date: "2026-04-09",
+        summary: "Market data successfully refreshed. Tech Solutions GMP moved to ₹41."
+    },
     {
         id: 1,
         title: "Market Outlook 2026: What investors should expect?",
