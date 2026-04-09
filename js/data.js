@@ -438,6 +438,12 @@ const ipoData = [
 
 const newsData = [
     {
+        id: 1775728853,
+        title: "Daily IPO Status Sync: April 09, 2026",
+        date: "2026-04-09",
+        summary: "Automation synced IPO statuses with today's date (2026-04-09). Upcoming and Recent sections updated."
+    },
+    {
         id: 1775728818,
         title: "Daily IPO Status Sync: April 09, 2026",
         date: "2026-04-09",
