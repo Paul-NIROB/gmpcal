@@ -6,26 +6,26 @@ const ipoData = [
         openDate: "2026-03-10",
         closeDate: "2026-03-12",
         issueSize: "₹1200 Cr",
-        gmp: "₹41 (15.89%)",
+        gmp: "₹45 (17.44%)",
         status: "Listed",
         type: "Mainline",
         listingDate: "2026-03-20",
         lotSize: 58,
         subscription: { qib: "1.2x", nii: "2.5x", retail: "5.1x", total: "2.9x" },
-    { sharesReserved: 1500000, sharesApplied: 7650000, multiplier: 5.1, probability: "19.6%" },
+        retailQuota: { sharesReserved: 1500000, sharesApplied: 7650000, multiplier: 5.1, probability: "19.6%" },
         about: "Tech Solutions India Ltd is a leading provider of digital transformation services across global markets.",
         objectives: ["Expansion of existing business units", "General corporate purposes", "Debt repayment"],
         strengths: ["Strong market presence", "Innovative product portfolio", "Robust financial growth"],
         risks: ["Intense competition", "Dependency on key clients", "Currency fluctuations"],
         allotmentStatus: "Expected on 2026-03-15",
-        lastUpdated: "2026-04-09 03:31 PM",
+        lastUpdated: "2026-04-09 03:37 PM",
         ratings: { fundamental: 4.5, risk: "Low", growth: 4.8 },
         timeline: [
-            { event: "Announcement", date: "2026-02-15", status: "Listed" },
-            { event: "IPO Open", date: "2026-03-10", status: "Listed" },
-            { event: "IPO Close", date: "2026-03-12", status: "Listed" },
-            { event: "Allotment", date: "2026-03-15", status: "Listed" },
-            { event: "Listing", date: "2026-03-20", status: "Listed" }
+            { event: "Announcement", date: "2026-02-15", status: "completed" },
+            { event: "IPO Open", date: "2026-03-10", status: "current" },
+            { event: "IPO Close", date: "2026-03-12", status: "pending" },
+            { event: "Allotment", date: "2026-03-15", status: "pending" },
+            { event: "Listing", date: "2026-03-20", status: "pending" }
         ]
     },
     {
@@ -41,20 +41,20 @@ const ipoData = [
         listingDate: "2026-03-25",
         lotSize: 130,
         subscription: { qib: "0x", nii: "0x", retail: "0x", total: "0x" },
-    { sharesReserved: 2500000, sharesApplied: 0, multiplier: 0, probability: "100%" },
+        retailQuota: { sharesReserved: 2500000, sharesApplied: 0, multiplier: 0, probability: "100%" },
         about: "Green Energy Corp focuses on sustainable energy production through solar and wind farms.",
         objectives: ["Investment in new solar projects", "Research and development", "Working capital requirements"],
         strengths: ["Sustainable business model", "Experienced management team", "Government subsidies"],
         risks: ["Weather dependency", "Regulatory changes", "High initial capital expenditure"],
         allotmentStatus: "To be announced",
-        lastUpdated: "2026-04-09 03:31 PM",
+        lastUpdated: "2026-04-09 03:37 PM",
         ratings: { fundamental: 4.2, risk: "Medium", growth: 4.5 },
         timeline: [
-            { event: "Announcement", date: "2026-02-20", status: "Listed" },
-            { event: "IPO Open", date: "2026-03-15", status: "Listed" },
-            { event: "IPO Close", date: "2026-03-17", status: "Listed" },
-            { event: "Allotment", date: "2026-03-20", status: "Listed" },
-            { event: "Listing", date: "2026-03-25", status: "Listed" }
+            { event: "Announcement", date: "2026-02-20", status: "completed" },
+            { event: "IPO Open", date: "2026-03-15", status: "pending" },
+            { event: "IPO Close", date: "2026-03-17", status: "pending" },
+            { event: "Allotment", date: "2026-03-20", status: "pending" },
+            { event: "Listing", date: "2026-03-25", status: "pending" }
         ]
     },
     {
@@ -70,20 +70,20 @@ const ipoData = [
         listingDate: "2026-03-15",
         lotSize: 31,
         subscription: { qib: "12.4x", nii: "8.9x", retail: "15.2x", total: "11.8x" },
-    { sharesReserved: 1200000, sharesApplied: 18240000, multiplier: 15.2, probability: "6.5%" },
+        retailQuota: { sharesReserved: 1200000, sharesApplied: 18240000, multiplier: 15.2, probability: "6.5%" },
         about: "FinTech Innovations provides cutting-edge payment gateway solutions and banking software.",
         objectives: ["Strategic acquisitions", "Technology infrastructure upgrade", "Market expansion"],
         strengths: ["Proprietary technology", "High customer retention", "Scalable platform"],
         risks: ["Cybersecurity threats", "Rapid technological changes", "Compliance risks"],
         allotmentStatus: "Allotment Finalized",
-        lastUpdated: "2026-04-09 03:31 PM",
+        lastUpdated: "2026-04-09 03:37 PM",
         ratings: { fundamental: 4.8, risk: "High", growth: 4.9 },
         timeline: [
-            { event: "Announcement", date: "2026-02-10", status: "Listed" },
-            { event: "IPO Open", date: "2026-03-05", status: "Listed" },
-            { event: "IPO Close", date: "2026-03-07", status: "Listed" },
-            { event: "Allotment", date: "2026-03-10", status: "Listed" },
-            { event: "Listing", date: "2026-03-15", status: "Listed" }
+            { event: "Announcement", date: "2026-02-10", status: "completed" },
+            { event: "IPO Open", date: "2026-03-05", status: "completed" },
+            { event: "IPO Close", date: "2026-03-07", status: "completed" },
+            { event: "Allotment", date: "2026-03-10", status: "current" },
+            { event: "Listing", date: "2026-03-15", status: "pending" }
         ]
     },
     {
@@ -99,20 +99,20 @@ const ipoData = [
         listingDate: "2026-03-05",
         lotSize: 1600,
         subscription: { qib: "2.1x", nii: "4.5x", retail: "8.7x", total: "5.2x" },
-    { sharesReserved: 800000, sharesApplied: 6960000, multiplier: 8.7, probability: "11.4%" },
+        retailQuota: { sharesReserved: 800000, sharesApplied: 6960000, multiplier: 8.7, probability: "11.4%" },
         about: "HealthCare Plus operates a chain of diagnostic centers across South India.",
         objectives: ["Opening new diagnostic centers", "Purchasing advanced medical equipment", "General corporate expenses"],
         strengths: ["Wide geographical reach", "Reliable diagnostic services", "Efficient operations"],
         risks: ["Healthcare regulations", "Medical professional shortage", "High maintenance costs"],
         allotmentStatus: "Allotment Finalized",
-        lastUpdated: "2026-04-09 03:31 PM",
+        lastUpdated: "2026-04-09 03:37 PM",
         ratings: { fundamental: 4.0, risk: "Low", growth: 4.2 },
         timeline: [
-            { event: "Announcement", date: "2026-02-01", status: "Listed" },
-            { event: "IPO Open", date: "2026-02-25", status: "Listed" },
-            { event: "IPO Close", date: "2026-02-27", status: "Listed" },
-            { event: "Allotment", date: "2026-03-02", status: "Listed" },
-            { event: "Listing", date: "2026-03-05", status: "Listed" }
+            { event: "Announcement", date: "2026-02-01", status: "completed" },
+            { event: "IPO Open", date: "2026-02-25", status: "completed" },
+            { event: "IPO Close", date: "2026-02-27", status: "completed" },
+            { event: "Allotment", date: "2026-03-02", status: "completed" },
+            { event: "Listing", date: "2026-03-05", status: "completed" }
         ]
     },
     {
@@ -128,20 +128,20 @@ const ipoData = [
         listingDate: "2026-03-22",
         lotSize: 75,
         subscription: { qib: "1.5x", nii: "3.2x", retail: "6.8x", total: "3.8x" },
-    { sharesReserved: 1100000, sharesApplied: 7480000, multiplier: 6.8, probability: "14.7%" },
+        retailQuota: { sharesReserved: 1100000, sharesApplied: 7480000, multiplier: 6.8, probability: "14.7%" },
         about: "Solar Systems India is a major player in rooftop solar installations.",
         objectives: ["New manufacturing unit", "Repayment of debt"],
         strengths: ["Strong order book", "Government incentives"],
         risks: ["Import dependency", "Policy changes"],
         allotmentStatus: "Expected on 2026-03-18",
-        lastUpdated: "2026-04-09 03:31 PM",
+        lastUpdated: "2026-04-09 03:37 PM",
         ratings: { fundamental: 4.3, risk: "Low", growth: 4.6 },
         timeline: [
-            { event: "Announcement", date: "2026-02-18", status: "Listed" },
-            { event: "IPO Open", date: "2026-03-11", status: "Listed" },
-            { event: "IPO Close", date: "2026-03-13", status: "Listed" },
-            { event: "Allotment", date: "2026-03-18", status: "Listed" },
-            { event: "Listing", date: "2026-03-22", status: "Listed" }
+            { event: "Announcement", date: "2026-02-18", status: "completed" },
+            { event: "IPO Open", date: "2026-03-11", status: "current" },
+            { event: "IPO Close", date: "2026-03-13", status: "pending" },
+            { event: "Allotment", date: "2026-03-18", status: "pending" },
+            { event: "Listing", date: "2026-03-22", status: "pending" }
         ]
     },
     {
@@ -157,20 +157,20 @@ const ipoData = [
         listingDate: "2026-03-18",
         lotSize: 40,
         subscription: { qib: "2.8x", nii: "5.1x", retail: "12.4x", total: "6.5x" },
-    { sharesReserved: 1800000, sharesApplied: 22320000, multiplier: 12.4, probability: "8.1%" },
+        retailQuota: { sharesReserved: 1800000, sharesApplied: 22320000, multiplier: 12.4, probability: "8.1%" },
         about: "Urban Infrastructure focuses on smart city projects and urban transit systems.",
         objectives: ["Project financing", "General corporate purposes"],
         strengths: ["Government contracts", "Experienced leadership"],
         risks: ["Project delays", "High debt"],
         allotmentStatus: "Expected on 2026-03-14",
-        lastUpdated: "2026-04-09 03:31 PM",
+        lastUpdated: "2026-04-09 03:37 PM",
         ratings: { fundamental: 4.1, risk: "Medium", growth: 4.4 },
         timeline: [
-            { event: "Announcement", date: "2026-02-12", status: "Listed" },
-            { event: "IPO Open", date: "2026-03-08", status: "Listed" },
-            { event: "IPO Close", date: "2026-03-10", status: "Listed" },
-            { event: "Allotment", date: "2026-03-14", status: "Listed" },
-            { event: "Listing", date: "2026-03-18", status: "Listed" }
+            { event: "Announcement", date: "2026-02-12", status: "completed" },
+            { event: "IPO Open", date: "2026-03-08", status: "current" },
+            { event: "IPO Close", date: "2026-03-10", status: "pending" },
+            { event: "Allotment", date: "2026-03-14", status: "pending" },
+            { event: "Listing", date: "2026-03-18", status: "pending" }
         ]
     },
     {
@@ -186,20 +186,20 @@ const ipoData = [
         listingDate: "2026-03-14",
         lotSize: 2000,
         subscription: { qib: "5.4x", nii: "12.1x", retail: "25.8x", total: "14.2x" },
-    { sharesReserved: 500000, sharesApplied: 12900000, multiplier: 25.8, probability: "3.8%" },
+        retailQuota: { sharesReserved: 500000, sharesApplied: 12900000, multiplier: 25.8, probability: "3.8%" },
         about: "Agro Foods processes and exports organic food products.",
         objectives: ["Expansion of processing unit", "Marketing and branding"],
         strengths: ["Export demand", "Organic certification"],
         risks: ["Raw material prices", "Climate risk"],
         allotmentStatus: "Allotment Finalized",
-        lastUpdated: "2026-04-09 03:31 PM",
+        lastUpdated: "2026-04-09 03:37 PM",
         ratings: { fundamental: 3.8, risk: "High", growth: 4.1 },
         timeline: [
-            { event: "Announcement", date: "2026-02-05", status: "Listed" },
-            { event: "IPO Open", date: "2026-03-04", status: "Listed" },
-            { event: "IPO Close", date: "2026-03-06", status: "Listed" },
-            { event: "Allotment", date: "2026-03-10", status: "Listed" },
-            { event: "Listing", date: "2026-03-14", status: "Listed" }
+            { event: "Announcement", date: "2026-02-05", status: "completed" },
+            { event: "IPO Open", date: "2026-03-04", status: "completed" },
+            { event: "IPO Close", date: "2026-03-06", status: "completed" },
+            { event: "Allotment", date: "2026-03-10", status: "completed" },
+            { event: "Listing", date: "2026-03-14", status: "pending" }
         ]
     },
     {
@@ -215,20 +215,20 @@ const ipoData = [
         listingDate: "2026-03-30",
         lotSize: 24,
         subscription: { qib: "0x", nii: "0x", retail: "0x", total: "0x" },
-    { sharesReserved: 3000000, sharesApplied: 0, multiplier: 0, probability: "100%" },
+        retailQuota: { sharesReserved: 3000000, sharesApplied: 0, multiplier: 0, probability: "100%" },
         about: "Bio-Pharma Solutions is a leading R&D firm for biopharmaceuticals.",
         objectives: ["R&D funding", "Acquisitions"],
         strengths: ["Strong pipeline", "Patented technology"],
         risks: ["FDA approvals", "High R&D costs"],
         allotmentStatus: "To be announced",
-        lastUpdated: "2026-04-09 03:31 PM",
+        lastUpdated: "2026-04-09 03:37 PM",
         ratings: { fundamental: 4.7, risk: "Medium", growth: 5.0 },
         timeline: [
-            { event: "Announcement", date: "2026-02-25", status: "Listed" },
-            { event: "IPO Open", date: "2026-03-18", status: "Listed" },
-            { event: "IPO Close", date: "2026-03-20", status: "Listed" },
-            { event: "Allotment", date: "2026-03-24", status: "Listed" },
-            { event: "Listing", date: "2026-03-30", status: "Listed" }
+            { event: "Announcement", date: "2026-02-25", status: "completed" },
+            { event: "IPO Open", date: "2026-03-18", status: "pending" },
+            { event: "IPO Close", date: "2026-03-20", status: "pending" },
+            { event: "Allotment", date: "2026-03-24", status: "pending" },
+            { event: "Listing", date: "2026-03-30", status: "pending" }
         ]
     },
     {
@@ -244,20 +244,20 @@ const ipoData = [
         listingDate: "2026-04-02",
         lotSize: 110,
         subscription: { qib: "0x", nii: "0x", retail: "0x", total: "0x" },
-    { sharesReserved: 1500000, sharesApplied: 0, multiplier: 0, probability: "100%" },
+        retailQuota: { sharesReserved: 1500000, sharesApplied: 0, multiplier: 0, probability: "100%" },
         about: "Auto Components Ltd manufactures precision parts for EVs.",
         objectives: ["EV division expansion", "Working capital"],
         strengths: ["EV market growth", "Key client base"],
         risks: ["Raw material costs", "Tech shift"],
         allotmentStatus: "To be announced",
-        lastUpdated: "2026-04-09 03:31 PM",
+        lastUpdated: "2026-04-09 03:37 PM",
         ratings: { fundamental: 4.2, risk: "Low", growth: 4.5 },
         timeline: [
-            { event: "Announcement", date: "2026-03-01", status: "Listed" },
-            { event: "IPO Open", date: "2026-03-22", status: "Listed" },
-            { event: "IPO Close", date: "2026-03-24", status: "Listed" },
-            { event: "Allotment", date: "2026-03-28", status: "Listed" },
-            { event: "Listing", date: "2026-04-02", status: "Listed" }
+            { event: "Announcement", date: "2026-03-01", status: "completed" },
+            { event: "IPO Open", date: "2026-03-22", status: "pending" },
+            { event: "IPO Close", date: "2026-03-24", status: "pending" },
+            { event: "Allotment", date: "2026-03-28", status: "pending" },
+            { event: "Listing", date: "2026-04-02", status: "pending" }
         ]
     },
     {
@@ -273,20 +273,20 @@ const ipoData = [
         listingDate: "2026-04-05",
         lotSize: 180,
         subscription: { qib: "0x", nii: "0x", retail: "0x", total: "0x" },
-    { sharesReserved: 900000, sharesApplied: 0, multiplier: 0, probability: "100%" },
+        retailQuota: { sharesReserved: 900000, sharesApplied: 0, multiplier: 0, probability: "100%" },
         about: "Retail Connect is an e-commerce enabler for small businesses.",
         objectives: ["Platform upgrade", "Marketing"],
         strengths: ["Growing MSME base", "Scalable tech"],
         risks: ["Competition", "Customer acquisition costs"],
         allotmentStatus: "To be announced",
-        lastUpdated: "2026-04-09 03:31 PM",
+        lastUpdated: "2026-04-09 03:37 PM",
         ratings: { fundamental: 3.9, risk: "Medium", growth: 4.3 },
         timeline: [
-            { event: "Announcement", date: "2026-03-05", status: "Closed" },
-            { event: "IPO Open", date: "2026-03-25", status: "Closed" },
-            { event: "IPO Close", date: "2026-03-27", status: "Closed" },
-            { event: "Allotment", date: "2026-03-31", status: "Closed" },
-            { event: "Listing", date: "2026-04-05", status: "Closed" }
+            { event: "Announcement", date: "2026-03-05", status: "completed" },
+            { event: "IPO Open", date: "2026-03-25", status: "pending" },
+            { event: "IPO Close", date: "2026-03-27", status: "pending" },
+            { event: "Allotment", date: "2026-03-31", status: "pending" },
+            { event: "Listing", date: "2026-04-05", status: "pending" }
         ]
     },
     {
@@ -296,26 +296,26 @@ const ipoData = [
         openDate: "2026-03-28",
         closeDate: "2026-03-30",
         issueSize: "₹5000 Cr",
-        gmp: "₹247 (25.00%)",
+        gmp: "₹251 (25.00%)",
         status: "Closed",
         type: "Mainline",
         listingDate: "2026-04-10",
         lotSize: 15,
         subscription: { qib: "0x", nii: "0x", retail: "0x", total: "0x" },
-    { sharesReserved: 4000000, sharesApplied: 0, multiplier: 0, probability: "100%" },
+        retailQuota: { sharesReserved: 4000000, sharesApplied: 0, multiplier: 0, probability: "100%" },
         about: "Digital Payments Corp is a major UPI and payment gateway provider.",
         objectives: ["Market expansion", "Tech infra"],
         strengths: ["High market share", "Strong brand"],
         risks: ["Regulatory changes", "Cyber threats"],
         allotmentStatus: "To be announced",
-        lastUpdated: "2026-04-09 03:31 PM",
+        lastUpdated: "2026-04-09 03:37 PM",
         ratings: { fundamental: 4.6, risk: "High", growth: 4.8 },
         timeline: [
-            { event: "Announcement", date: "2026-03-10", status: "Listed" },
-            { event: "IPO Open", date: "2026-03-28", status: "Listed" },
-            { event: "IPO Close", date: "2026-03-30", status: "Listed" },
-            { event: "Allotment", date: "2026-04-04", status: "Listed" },
-            { event: "Listing", date: "2026-04-10", status: "Listed" }
+            { event: "Announcement", date: "2026-03-10", status: "completed" },
+            { event: "IPO Open", date: "2026-03-28", status: "pending" },
+            { event: "IPO Close", date: "2026-03-30", status: "pending" },
+            { event: "Allotment", date: "2026-04-04", status: "pending" },
+            { event: "Listing", date: "2026-04-10", status: "pending" }
         ]
     },
     {
@@ -331,20 +331,20 @@ const ipoData = [
         listingDate: "2026-02-25",
         lotSize: 34,
         subscription: { qib: "15.2x", nii: "10.5x", retail: "18.4x", total: "14.8x" },
-    { sharesReserved: 2200000, sharesApplied: 40480000, multiplier: 18.4, probability: "5.4%" },
+        retailQuota: { sharesReserved: 2200000, sharesApplied: 40480000, multiplier: 18.4, probability: "5.4%" },
         about: "Cloud Infra provides managed cloud and data center services.",
         objectives: ["New data centers", "General corporate"],
         strengths: ["Strong client base", "High growth sector"],
         risks: ["Energy costs", "Tech obsolescence"],
         allotmentStatus: "Allotment Finalized",
-        lastUpdated: "2026-04-09 03:31 PM",
+        lastUpdated: "2026-04-09 03:37 PM",
         ratings: { fundamental: 4.4, risk: "Low", growth: 4.7 },
         timeline: [
-            { event: "Announcement", date: "2026-01-20", status: "Listed" },
-            { event: "IPO Open", date: "2026-02-15", status: "Listed" },
-            { event: "IPO Close", date: "2026-02-17", status: "Listed" },
-            { event: "Allotment", date: "2026-02-20", status: "Listed" },
-            { event: "Listing", date: "2026-02-25", status: "Listed" }
+            { event: "Announcement", date: "2026-01-20", status: "completed" },
+            { event: "IPO Open", date: "2026-02-15", status: "completed" },
+            { event: "IPO Close", date: "2026-02-17", status: "completed" },
+            { event: "Allotment", date: "2026-02-20", status: "completed" },
+            { event: "Listing", date: "2026-02-25", status: "completed" }
         ]
     },
     {
@@ -360,20 +360,20 @@ const ipoData = [
         listingDate: "2026-02-20",
         lotSize: 66,
         subscription: { qib: "8.4x", nii: "15.2x", retail: "32.1x", total: "18.5x" },
-    { sharesReserved: 1500000, sharesApplied: 48150000, multiplier: 32.1, probability: "3.1%" },
+        retailQuota: { sharesReserved: 1500000, sharesApplied: 48150000, multiplier: 32.1, probability: "3.1%" },
         about: "EdTech World provides K-12 and competitive exam prep online.",
         objectives: ["Content development", "Marketing"],
         strengths: ["Large user base", "Proprietary content"],
         risks: ["Content costs", "Regulatory changes"],
         allotmentStatus: "Allotment Finalized",
-        lastUpdated: "2026-04-09 03:31 PM",
+        lastUpdated: "2026-04-09 03:37 PM",
         ratings: { fundamental: 3.7, risk: "High", growth: 4.5 },
         timeline: [
-            { event: "Announcement", date: "2026-01-15", status: "Listed" },
-            { event: "IPO Open", date: "2026-02-10", status: "Listed" },
-            { event: "IPO Close", date: "2026-02-12", status: "Listed" },
-            { event: "Allotment", date: "2026-02-15", status: "Listed" },
-            { event: "Listing", date: "2026-02-20", status: "Listed" }
+            { event: "Announcement", date: "2026-01-15", status: "completed" },
+            { event: "IPO Open", date: "2026-02-10", status: "completed" },
+            { event: "IPO Close", date: "2026-02-12", status: "completed" },
+            { event: "Allotment", date: "2026-02-15", status: "completed" },
+            { event: "Listing", date: "2026-02-20", status: "completed" }
         ]
     },
     {
@@ -389,20 +389,20 @@ const ipoData = [
         listingDate: "2026-02-15",
         lotSize: 96,
         subscription: { qib: "4.2x", nii: "8.1x", retail: "15.4x", total: "9.2x" },
-    { sharesReserved: 1000000, sharesApplied: 15400000, multiplier: 15.4, probability: "6.5%" },
+        retailQuota: { sharesReserved: 1000000, sharesApplied: 15400000, multiplier: 15.4, probability: "6.5%" },
         about: "Logistics Pro provides end-to-end supply chain solutions.",
         objectives: ["Warehouse automation", "Fleet expansion"],
         strengths: ["Strong network", "Tech-enabled operations"],
         risks: ["Fuel prices", "Operational costs"],
         allotmentStatus: "Allotment Finalized",
-        lastUpdated: "2026-04-09 03:31 PM",
+        lastUpdated: "2026-04-09 03:37 PM",
         ratings: { fundamental: 4.0, risk: "Low", growth: 4.2 },
         timeline: [
-            { event: "Announcement", date: "2026-01-10", status: "Listed" },
-            { event: "IPO Open", date: "2026-02-05", status: "Listed" },
-            { event: "IPO Close", date: "2026-02-07", status: "Listed" },
-            { event: "Allotment", date: "2026-02-10", status: "Listed" },
-            { event: "Listing", date: "2026-02-15", status: "Listed" }
+            { event: "Announcement", date: "2026-01-10", status: "completed" },
+            { event: "IPO Open", date: "2026-02-05", status: "completed" },
+            { event: "IPO Close", date: "2026-02-07", status: "completed" },
+            { event: "Allotment", date: "2026-02-10", status: "completed" },
+            { event: "Listing", date: "2026-02-15", status: "completed" }
         ]
     },
     {
@@ -417,33 +417,31 @@ const ipoData = [
         type: "Mainline",
         listingDate: "2026-02-05",
         lotSize: 48,
-        subscription: { qib: "12.1x", nii: "25.4x", retail: "45.2x", total: "28.5x" }
+        subscription: { qib: "12.1x", nii: "25.4x", retail: "45.2x", total: "28.5x" },
+        retailQuota: { sharesReserved: 1800000, sharesApplied: 81360000, multiplier: 45.2, probability: "2.2%" },
+        about: "Smart Electronics manufactures consumer durables and smart home devices.",
+        objectives: ["New plant", "Brand building"],
+        strengths: ["Innovation", "Distribution network"],
+        risks: ["Component costs", "Competition"],
+        allotmentStatus: "Allotment Finalized",
+        lastUpdated: "2026-04-09 03:37 PM",
+        ratings: { fundamental: 4.2, risk: "Medium", growth: 4.6 },
+        timeline: [
+            { event: "Announcement", date: "2026-01-01", status: "completed" },
+            { event: "IPO Open", date: "2026-01-25", status: "completed" },
+            { event: "IPO Close", date: "2026-01-27", status: "completed" },
+            { event: "Allotment", date: "2026-01-31", status: "completed" },
+            { event: "Listing", date: "2026-02-05", status: "completed" }
+        ]
+    }
 ];
 
 const newsData = [
     {
-        id: 1775728918,
+        id: 1775729226,
         title: "Daily Status Sync: April 09, 2026",
         date: "2026-04-09",
-        summary: "IPO statuses for Recent and Upcoming sections have been synchronized with today's market dates."
-    },
-    {
-        id: 1775728853,
-        title: "Daily IPO Status Sync: April 09, 2026",
-        date: "2026-04-09",
-        summary: "Automation synced IPO statuses with today's date (2026-04-09). Upcoming and Recent sections updated."
-    },
-    {
-        id: 1775728818,
-        title: "Daily IPO Status Sync: April 09, 2026",
-        date: "2026-04-09",
-        summary: "Automation synced IPO statuses with today's date (2026-04-09). Upcoming and Recent sections updated."
-    },
-    {
-        id: 1775728550,
-        title: "Live Market Update: April 09, 2026",
-        date: "2026-04-09",
-        summary: "Market data successfully refreshed. Tech Solutions GMP moved to ₹41."
+        summary: "IPO statuses and GMP levels have been synchronized with the latest market data."
     },
     {
         id: 1,
